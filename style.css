@@ -18,37 +18,5 @@
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
-  font-family: 'YuansuLab', sans-serif;
-}
-
-body {
-  background-color: #111;
-  color: #fff;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
-  gap: 0;
-  overflow: hidden;
-}
-
-.scroll {
-  width: 100%;
-  overflow: hidden;
-  white-space: nowrap;
-  position: relative;
-  mask-image: linear-gradient(90deg, transparent, #fff 10%, #fff 90%, transparent);
-  -webkit-mask-image: linear-gradient(90deg, transparent, #fff 10%, #fff 90%, transparent);
-  height: 1.5em;
-  line-height: 1.5em;
-}
-
-.scroll .content {
-  display: inline-flex;
-  gap: 0;
-  will-change: transform;
-  transform: translateZ(0);
-}
+ 
 
