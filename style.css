@@ -135,14 +135,5 @@ body {
   transform: translate(-50%, -50%);
   position: absolute;
 }
-@media (max-width: 600px) {
-  body {
-    justify-content: center;
-  }
 
-  .business-card {
-    top: 50%;
-    transform: translate(-50%, -50%);
-  }
-}
 
