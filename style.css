@@ -18,5 +18,131 @@
 * {
   margin: 0;
   padding: 0;
- 
+  box-sizing: border-box;
+  font-family: 'YuansuLab', sans-serif;
+}
+
+body {
+  background-color: #111;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  gap: 0;
+  overflow: hidden;
+}
+
+.scroll {
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  position: relative;
+  mask-image: linear-gradient(90deg, transparent, #fff 10%, #fff 90%, transparent);
+  -webkit-mask-image: linear-gradient(90deg, transparent, #fff 10%, #fff 90%, transparent);
+  height: 1.5em;
+  line-height: 1.5em;
+}
+
+.scroll .content {
+  display: inline-flex;
+  gap: 0;
+  will-change: transform;
+  transform: translateZ(0);
+}
+
+.scroll span {
+  font-size: 1.5em;
+  padding: 0;
+  margin: 0;
+  line-height: 1;
+  display: inline-block;
+  vertical-align: top;
+  letter-spacing: 0;
+}
+
+.scroll span:nth-child(even) {
+  transform: rotate(180deg) translateY(-2px);
+}
+
+.scroll:nth-child(1) span:nth-child(odd),
+.scroll:nth-child(1) span:nth-child(even) {
+  background: linear-gradient(to right, #5e17eb, #5e17eb);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.scroll:nth-child(2) span:nth-child(odd),
+.scroll:nth-child(2) span:nth-child(even) {
+  background: linear-gradient(to right, #ff66c4, #ff66c4);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.scroll:nth-child(3) span:nth-child(odd),
+.scroll:nth-child(3) span:nth-child(even) {
+  background: linear-gradient(to right, #ff5757, #ff5757);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.scroll:nth-child(4) span:nth-child(odd),
+.scroll:nth-child(4) span:nth-child(even) {
+  background: linear-gradient(to right, #ff3131, #ff3131);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.business-card {
+  width: 230px;
+  height: 155px;
+  perspective: 1000px;
+  position: absolute;
+  z-index: 10;
+  transform: translateZ(0);
+  will-change: transform;
+  backface-visibility: hidden;
+}
+
+.business-card video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  border-radius: 8px;
+  backface-visibility: hidden;
+  transition: transform 0.8s ease;
+  will-change: transform;
+}
+
+.business-card .front {
+  transform: rotateY(0deg);
+}
+
+.business-card .back {
+  transform: rotateY(180deg);
+}
+
+.business-card.business-card-active .front {
+  transform: rotateY(180deg);
+}
+
+.business-card.business-card-active .back {
+  transform: rotateY(360deg);
+}
+
+.middle {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  position: absolute;
+}
+@media (max-width: 600px) {
+  body {
+    justify-content: center;
+  }
+
+  .business-card {
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
 
